@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Labyrinth Client</title>
+
+    <style>
+        body {
+            width: 100vw;
+            height: 100vh;
+            margin: 0;
+            padding: 0;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .door-chooser {
+            position: relative;
+            width: 60vw;
+            height: 60vw;
+        }
+
+        .border-hor {
+            box-sizing: border-box;
+            width: 33%;
+            height: 100%;
+            background: black;
+            border: 3px solid gray;
+        }
+        .border-ver {
+            box-sizing: border-box;
+            width: 100%;
+            height: 33%;
+            background: black;
+            border: 3px solid gray;
+        }
+        .border-top-container {
+            width: 80%;
+            height: 10%;
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+        }
+        .border-left-container {
+            width: 10%;
+            height: 80%;
+            position: absolute;
+            left: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            display: flex;
+            flex-direction: column;
+        }
+        .border-right-container {
+            width: 10%;
+            height: 80%;
+            position: absolute;
+            right: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            display: flex;
+            flex-direction: column;
+        }
+        .border-bottom-container {
+            width: 80%;
+            height: 10%;
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- <div id="join-container" class="join-container">
+        <button id="join-red">Join RED</button>
+        <button id="join-blue">Join BLUE</button>
+    </div> -->
+
+    <div id="door-chooser" class="door-chooser">
+        <div class="border-top-container">
+            <div class="border-hor" id="border-0"></div>
+            <div class="border-hor" id="border-1"></div>
+            <div class="border-hor" id="border-2"></div>
+        </div>
+        <div class="border-right-container">
+            <div class="border-ver" id="border-3"></div>
+            <div class="border-ver" id="border-4"></div>
+            <div class="border-ver" id="border-5"></div>
+        </div>
+        <div class="border-bottom-container">
+            <div class="border-hor" id="border-6"></div>
+            <div class="border-hor" id="border-7"></div>
+            <div class="border-hor" id="border-8"></div>
+        </div>
+        <div class="border-left-container">
+            <div class="border-ver" id="border-9"></div>
+            <div class="border-ver" id="border-10"></div>
+            <div class="border-ver" id="border-11"></div>
+        </div>
+    </div>
+
+    <script src="node_modules/socket.io-client/dist/socket.io.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>
