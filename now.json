@@ -1,0 +1,7 @@
+{
+  "version": 2,
+  "builds": [{ "src": "package.json", "use": "@now/static-build" }],
+  "name": "labyrinth",
+  "alias": ["labyrinth.bodgingbear.dev", "labyrinth.xn--rihx924p.ws"],
+  "regions": ["cdg1"]
+}
