@@ -1,7 +1,7 @@
 const socket = io('http://localhost:1337/user')
 
 const joinGame = team => () => {
-    socket.emit('join', {team})
+    socket.emit('join', JSON.stringify({team}))
 }
 
 // emit join-game
@@ -21,10 +21,10 @@ $borderInputs.forEach($border => $border.addEventListener('click', (event) => {
     event.target.classList.add('selected')
 
     const borderId = event.target.getAttribute('borderId')
-    selectedBorderId = borderId
+    selectedBorderId = +borderId
 }))
 
 const $submitBtn = document.getElementById('submit-btn')
 $submitBtn.addEventListener('click', () => {
-    socket.emit('submit', selectedBorderId)
+    socket.emit('submit', JSON.stringify({ doorIndex: selectedBorderId }))
 })
