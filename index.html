@@ -19,6 +19,14 @@
             justify-content: center;
         }
 
+        .choose-screen {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: space-evenly;
+            flex-direction: column;
+        }
+
         .door-chooser {
             position: relative;
             width: 60vw;
@@ -77,36 +85,42 @@
             transform: translateX(-50%);
             display: flex;
         }
+        .selected {
+            background: white;
+        }
     </style>
 </head>
 
 <body>
-    <!-- <div id="join-container" class="join-container">
+    <div id="join-container" class="join-container">
         <button id="join-red">Join RED</button>
         <button id="join-blue">Join BLUE</button>
-    </div> -->
+    </div>
 
-    <div id="door-chooser" class="door-chooser">
-        <div class="border-top-container">
-            <div class="border-hor" id="border-0"></div>
-            <div class="border-hor" id="border-1"></div>
-            <div class="border-hor" id="border-2"></div>
+    <div id="choose-screen" class="choose-screen">
+        <div id="door-chooser" class="door-chooser">
+            <div class="border-top-container">
+                <div class="border-hor" id="border" borderId="0"></div>
+                <div class="border-hor" id="border" borderId="1"></div>
+                <div class="border-hor" id="border" borderId="2"></div>
+            </div>
+            <div class="border-right-container">
+                <div class="border-ver" id="border" borderId="3"></div>
+                <div class="border-ver" id="border" borderId="4"></div>
+                <div class="border-ver" id="border" borderId="5"></div>
+            </div>
+            <div class="border-bottom-container">
+                <div class="border-hor" id="border" borderId="6"></div>
+                <div class="border-hor" id="border" borderId="7"></div>
+                <div class="border-hor" id="border" borderId="8"></div>
+            </div>
+            <div class="border-left-container">
+                <div class="border-ver" id="border" borderId="9"></div>
+                <div class="border-ver" id="border" borderId="10"></div>
+                <div class="border-ver" id="border" borderId="11"></div>
+            </div>
         </div>
-        <div class="border-right-container">
-            <div class="border-ver" id="border-3"></div>
-            <div class="border-ver" id="border-4"></div>
-            <div class="border-ver" id="border-5"></div>
-        </div>
-        <div class="border-bottom-container">
-            <div class="border-hor" id="border-6"></div>
-            <div class="border-hor" id="border-7"></div>
-            <div class="border-hor" id="border-8"></div>
-        </div>
-        <div class="border-left-container">
-            <div class="border-ver" id="border-9"></div>
-            <div class="border-ver" id="border-10"></div>
-            <div class="border-ver" id="border-11"></div>
-        </div>
+        <button id="submit-btn">Send</button>
     </div>
 
     <script src="node_modules/socket.io-client/dist/socket.io.js"></script>
