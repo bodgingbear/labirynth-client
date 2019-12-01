@@ -7,40 +7,43 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Labyrinth Client</title>
 
-    <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css?family=Orbitron&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css?r=3">
+    <link href="https://fonts.googleapis.com/css?family=Orbitron:400,700&display=swap" rel="stylesheet">
 </head>
 
 <body>
-    <div id="join-container" class="join-container">
-        <button id="join-red" class="btn">Join A</button>
-        <button id="join-blue" class="btn">Join B</button>
-    </div>
-
-    <div id="choose-screen" class="choose-screen hidden">
-        <div id="door-chooser" class="door-chooser">
-            <div class="border-top-container">
-                <div class="border-hor" id="border" borderId="0"></div>
-                <div class="border-hor" id="border" borderId="1"></div>
-                <div class="border-hor" id="border" borderId="2"></div>
-            </div>
-            <div class="border-right-container">
-                <div class="border-ver" id="border" borderId="3"></div>
-                <div class="border-ver" id="border" borderId="4"></div>
-                <div class="border-ver" id="border" borderId="5"></div>
-            </div>
-            <div class="border-bottom-container">
-                <div class="border-hor" id="border" borderId="8"></div>
-                <div class="border-hor" id="border" borderId="7"></div>
-                <div class="border-hor" id="border" borderId="6"></div>
-            </div>
-            <div class="border-left-container">
-                <div class="border-ver" id="border" borderId="11"></div>
-                <div class="border-ver" id="border" borderId="10"></div>
-                <div class="border-ver" id="border" borderId="9"></div>
-            </div>
+    <div class="container">
+        <div id="join-container" class="join-container">
+            <button id="join-red" class="btn">Join A</button>
+            <button id="join-blue" class="btn">Join B</button>
         </div>
-        <button id="submit-btn" class="btn">Send</button>
+
+        <div id="choose-screen" class="choose-screen hidden">
+            <div id="door-chooser" class="door-chooser">
+                <div class="border-top-container">
+                    <div class="border-hor" id="border" borderId="0"></div>
+                    <div class="border-hor" id="border" borderId="1"></div>
+                    <div class="border-hor" id="border" borderId="2"></div>
+                </div>
+                <div class="border-right-container">
+                    <div class="border-ver" id="border" borderId="3"></div>
+                    <div class="border-ver" id="border" borderId="4"></div>
+                    <div class="border-ver" id="border" borderId="5"></div>
+                </div>
+                <div class="border-bottom-container">
+                    <div class="border-hor" id="border" borderId="8"></div>
+                    <div class="border-hor" id="border" borderId="7"></div>
+                    <div class="border-hor" id="border" borderId="6"></div>
+                </div>
+                <div class="border-left-container">
+                    <div class="border-ver" id="border" borderId="11"></div>
+                    <div class="border-ver" id="border" borderId="10"></div>
+                    <div class="border-ver" id="border" borderId="9"></div>
+                </div>
+                <div class="btn-blank" id="border" borderId="-1">SKIP</div>
+            </div>
+            <button id="submit-btn" class="btn">Send</button>
+        </div>
     </div>
 
     <script src="node_modules/socket.io-client/dist/socket.io.js"></script>
