@@ -1,4 +1,10 @@
-const socket = io('http://localhost:1337/user')
+let socketUrl = 'http://localhost:1337';
+
+if (!(/(^\d+\.)|(^localhost$)/.test(window.location.hostname))) {
+    socketUrl = 'https://bb-pgg-labyrinth.herokuapp.com';
+}
+
+const socket = io(`${socketUrl}/user`);
 
 let teamId = null
 const joinGame = team => () => {
