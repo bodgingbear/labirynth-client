@@ -3,6 +3,7 @@ html, body {
   height: 100%;
   margin: 0;
   background: #000;
+  font-family: Orbitron, 'Courier New', Courier, monospace;
 }
 
 body {
@@ -25,12 +26,12 @@ body {
   z-index: 2;
   box-shadow: 0 0 10px rgba(0, 255, 255, 0.3);
   cursor: pointer;
-  margin: 0 16px;
+  margin: 16px;
 }
 
 .choose-screen {
-  height: 100vh;
   display: flex;
+  flex: 1;
   align-items: center;
   justify-content: space-evenly;
   flex-direction: column;
@@ -38,78 +39,86 @@ body {
 
 .door-chooser {
   position: relative;
-  width: 60vw;
-  height: 60vw;
+  width: 65vw;
+  height: 65vw;
 }
 
 .border-hor {
   box-sizing: border-box;
-  width: 33%;
   height: 100%;
-  background: black;
-  border: 3px solid gray;
+  background: rgba(0,0,0,0.2);
+  border: 3px solid #00ffff;
+  box-shadow: 0 0 10px rgba(0, 255, 255, 0.5);
+  flex: 1;
 }
 
 .border-ver {
   box-sizing: border-box;
   width: 100%;
-  height: 33%;
-  background: black;
-  border: 3px solid gray;
+  background: rgba(0,0,0,0.2);
+  border: 3px solid #00ffff;
+  box-shadow: 0 0 10px rgba(0, 255, 255, 0.5);
+  flex: 1;
+}
+
+:root {
+  --btn-size: 20%;
 }
 
 .border-top-container {
   width: 100%;
-  height: 10%;
+  height: var(--btn-size);
   position: absolute;
   top: 0;
   left: 50%;
-  transform: translateX(-50%);
+  transform: translateX(-50%) translateY(-100%);
   display: flex;
 }
 
 .border-left-container {
-  width: 10%;
+  width: var(--btn-size);
   height: 100%;
   position: absolute;
   left: 0;
   top: 50%;
-  transform: translateY(-50%);
+  transform: translateY(-50%) translateX(-100%);
   display: flex;
   flex-direction: column;
 }
 
 .border-right-container {
-  width: 10%;
+  width: var(--btn-size);
   height: 100%;
   position: absolute;
   right: 0;
   top: 50%;
-  transform: translateY(-50%);
+  transform: translateY(-50%) translateX(100%);
   display: flex;
   flex-direction: column;
 }
 
 .border-bottom-container {
   width: 100%;
-  height: 10%;
+  height: var(--btn-size);
   position: absolute;
   bottom: 0;
   left: 50%;
-  transform: translateX(-50%);
+  transform: translateX(-50%) translateY(100%);
   display: flex;
 }
 
 .selected {
-  background: white;
+  background: rgba(255, 255, 255, 0.75);
 }
 
 .teamText{
   font-size: 50px;
-  position: absolute;
-  top: 10%;
-  left: 10%;
-  transform: translate(-50%, -50%);
+  text-align: center;
+  height: 120px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
 }
 
 .hidden{
@@ -132,4 +141,41 @@ body {
   justify-content: center;
 
   visibility: hidden;
+}
+.container {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  height: 100%;
+  box-sizing: border-box;
+}
+
+.btn-blank {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  font-size: 48px;
+  font-weight: 700;
+  text-shadow:
+    1px 0 0 #0ff,
+    -1px 0 0 #0ff,
+    0 1px 0 #0ff,
+    0 -1px 0 #0ff,
+    0 0 10px rgba(0, 255, 255, 0.9);
+}
+
+.join-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.join-container.hidden {
+  display: none;
 }
