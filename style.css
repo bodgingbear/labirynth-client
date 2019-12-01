@@ -130,6 +130,23 @@ body {
   display: none;
 }
 
+.waiting-screen {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+
+  width: 100vw;
+  height: 100vh;
+  z-index: 9;
+  background: rgba(66, 95, 95, 0.9);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  visibility: hidden;
+}
 .container {
   display: flex;
   justify-content: center;
