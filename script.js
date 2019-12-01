@@ -34,10 +34,14 @@ $borderInputs.forEach($border => $border.addEventListener('click', (event) => {
     selectedBorderId = +borderId
 }))
 
+let waitingTimeout;
+
 const $submitBtn = document.getElementById('submit-btn')
 $submitBtn.addEventListener('click', () => {
     socket.emit('submit', JSON.stringify({ doorIndex: selectedBorderId }))
-    document.querySelector('#waiting-screen').style.setProperty('visibility', 'visible')
+    waitingTimeout = setTimeout(() => {
+        document.querySelector('#waiting-screen').style.setProperty('visibility', 'visible')
+    }, 100);
 })
 
 socket.on('game-update', ({team: {id}}) => {
@@ -45,5 +49,6 @@ socket.on('game-update', ({team: {id}}) => {
         return
     }
 
+    clearTimeout(waitingTimeout);
     document.querySelector('#waiting-screen').style.setProperty('visibility', 'hidden')
 })

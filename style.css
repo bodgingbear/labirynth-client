@@ -147,6 +147,15 @@ body {
 
   visibility: hidden;
 }
+
+.waiting-screen div {
+  font-size: 2rem;
+  padding: 2rem;
+  text-align: center;
+  color: #fff;
+  font-weight: 500;
+}
+
 .container {
   display: flex;
   justify-content: center;
