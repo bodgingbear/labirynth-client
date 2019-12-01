@@ -1,6 +1,8 @@
 const socket = io('http://localhost:1337/user')
 
+let teamId = null
 const joinGame = team => () => {
+    teamId = team
     socket.emit('join', JSON.stringify({team}))
     $teamName = document.createElement('div');
     $teamName.classList.add('teamText');
@@ -35,4 +37,13 @@ $borderInputs.forEach($border => $border.addEventListener('click', (event) => {
 const $submitBtn = document.getElementById('submit-btn')
 $submitBtn.addEventListener('click', () => {
     socket.emit('submit', JSON.stringify({ doorIndex: selectedBorderId }))
+    document.querySelector('#waiting-screen').style.setProperty('visibility', 'visible')
+})
+
+socket.on('game-update', ({team: {id}}) => {
+    if(id !== teamId) {
+        return
+    }
+
+    document.querySelector('#waiting-screen').style.setProperty('visibility', 'hidden')
 })
