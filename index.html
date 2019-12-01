@@ -7,104 +7,14 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Labyrinth Client</title>
 
-    <style>
-        body {
-            width: 100vw;
-            height: 100vh;
-            margin: 0;
-            padding: 0;
-
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .choose-screen {
-            height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: space-evenly;
-            flex-direction: column;
-        }
-
-        .door-chooser {
-            position: relative;
-            width: 60vw;
-            height: 60vw;
-        }
-
-        .border-hor {
-            box-sizing: border-box;
-            width: 33%;
-            height: 100%;
-            background: black;
-            border: 3px solid gray;
-        }
-        .border-ver {
-            box-sizing: border-box;
-            width: 100%;
-            height: 33%;
-            background: black;
-            border: 3px solid gray;
-        }
-        .border-top-container {
-            width: 100%;
-            height: 10%;
-            position: absolute;
-            top: 0;
-            left: 50%;
-            transform: translateX(-50%);
-            display: flex;
-        }
-        .border-left-container {
-            width: 10%;
-            height: 100%;
-            position: absolute;
-            left: 0;
-            top: 50%;
-            transform: translateY(-50%);
-            display: flex;
-            flex-direction: column;
-        }
-        .border-right-container {
-            width: 10%;
-            height: 100%;
-            position: absolute;
-            right: 0;
-            top: 50%;
-            transform: translateY(-50%);
-            display: flex;
-            flex-direction: column;
-        }
-        .border-bottom-container {
-            width: 100%;
-            height: 10%;
-            position: absolute;
-            bottom: 0;
-            left: 50%;
-            transform: translateX(-50%);
-            display: flex;
-        }
-        .selected {
-            background: white;
-        }
-        .teamText{
-            font-size: 50px;
-            position: absolute;
-            top: 10%;
-            left: 10%;
-            transform: translate(-50%, -50%);
-        }
-        .hidden{
-            display: none;
-        }
-    </style>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css?family=Orbitron&display=swap" rel="stylesheet">
 </head>
 
 <body>
     <div id="join-container" class="join-container">
-        <button id="join-red">Join A</button>
-        <button id="join-blue">Join B</button>
+        <button id="join-red" class="btn">Join A</button>
+        <button id="join-blue" class="btn">Join B</button>
     </div>
 
     <div id="choose-screen" class="choose-screen hidden">
@@ -130,7 +40,7 @@
                 <div class="border-ver" id="border" borderId="9"></div>
             </div>
         </div>
-        <button id="submit-btn">Send</button>
+        <button id="submit-btn" class="btn">Send</button>
     </div>
 
     <script src="node_modules/socket.io-client/dist/socket.io.js"></script>
