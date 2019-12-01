@@ -38,7 +38,10 @@ let waitingTimeout;
 
 const $submitBtn = document.getElementById('submit-btn')
 $submitBtn.addEventListener('click', () => {
-    socket.emit('submit', JSON.stringify({ doorIndex: selectedBorderId }))
+    socket.emit('submit', JSON.stringify({ doorIndex: selectedBorderId }));
+
+    selectedBorderId = null;
+    document.querySelector('.selected').classList.remove('selected');
     waitingTimeout = setTimeout(() => {
         document.querySelector('#waiting-screen').style.setProperty('visibility', 'visible')
     }, 100);
