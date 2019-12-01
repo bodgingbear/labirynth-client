@@ -39,8 +39,13 @@ body {
 
 .door-chooser {
   position: relative;
-  width: 65vw;
-  height: 65vw;
+  width: 100%;
+}
+
+.door-chooser::after {
+  content: '';
+  display: block;
+  padding-bottom: 100%;
 }
 
 .border-hor {
