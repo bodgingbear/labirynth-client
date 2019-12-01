@@ -88,16 +88,26 @@
         .selected {
             background: white;
         }
+        .teamText{
+            font-size: 50px;
+            position: absolute;
+            top: 10%;
+            left: 10%;
+            transform: translate(-50%, -50%);
+        }
+        .hidden{
+            display: none;
+        }
     </style>
 </head>
 
 <body>
     <div id="join-container" class="join-container">
-        <button id="join-red">Join RED</button>
-        <button id="join-blue">Join BLUE</button>
+        <button id="join-red">Join A</button>
+        <button id="join-blue">Join B</button>
     </div>
 
-    <div id="choose-screen" class="choose-screen">
+    <div id="choose-screen" class="choose-screen hidden">
         <div id="door-chooser" class="door-chooser">
             <div class="border-top-container">
                 <div class="border-hor" id="border" borderId="0"></div>
