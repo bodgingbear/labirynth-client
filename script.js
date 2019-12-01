@@ -10,7 +10,7 @@ const joinGame = team => () => {
     $teamName.textContent = teamStr.toUpperCase();
     $teamName.style.color = team === 'teamA' ? '#ff00ff' : '#fff000';
     document.querySelector('.container').prepend($teamName);
-    document.querySelector('#choose-screen').className = document.querySelector('#choose-screen').className.replace('hidden', '');
+    document.querySelector('#choose-screen').classList.remove('hidden');
     document.querySelector('#join-container').classList.add('hidden');
 }
 
