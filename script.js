@@ -43,6 +43,11 @@ $borderInputs.forEach($border => $border.addEventListener('click', (event) => {
 let waitingTimeout;
 
 const $submitBtn = document.getElementById('submit-btn')
+
+socket.on('game-start', () => {
+    $submitBtn.style.setProperty('visibility', 'visible')
+})
+
 $submitBtn.addEventListener('click', () => {
     socket.emit('submit', JSON.stringify({ doorIndex: selectedBorderId }));
 
